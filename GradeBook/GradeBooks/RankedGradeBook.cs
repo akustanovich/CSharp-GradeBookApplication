@@ -15,9 +15,9 @@ namespace GradeBook.GradeBooks
     public override char GetLetterGrade(double averageGrade)
     {
       var StudentsCount = Students.Count;
-      if (StudentsCount <= 5)
+      if (StudentsCount < 5)
       {
-        throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
+          throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work.");
       }
 
       var stdpcnt = (int)Math.Ceiling(StudentsCount * 0.2);
